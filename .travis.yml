@@ -1,0 +1,15 @@
+sudo: false
+language: cpp
+os:
+    - linux
+
+addons:
+    apt:
+        sources:
+        - ubuntu-toolchain-r-test
+        packages:
+        - g++-6.3
+
+script:
+    - CXX=/usr/bin/g++-6.3 CC=/usr/bin/gcc-6.3 cmake .
+    - cmake --build . -- -j2
